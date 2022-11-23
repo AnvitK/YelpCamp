@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate') %>
+<div class="my-4" id="cluster-map"></div>
+
+<h1>All Campgrounds</h1>
+<!-- <div>
+    <a href="/campgrounds/new">Add Campground</a>
+</div> -->
+<div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+        <% for(let campground of campgrounds) {%>
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    
+                        <% if(campground.images.length) {%> 
+                            <img class="img-fluid" src="<%= campground.images[0].url %> " alt="">
+                        <% } else { %>     
+                            <img class="img-fluid" src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGNhbXBpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+                        <% } %> 
+                    
+                    
+                        <div class="card-body">
+                            <h5 class="card-title"> <%= campground.title %> </h5>
+                            <!-- <h5 class="card-title"> <%= campground.properties.popUpMarkup %> </h5> -->
+                            <p class="card-text"> <%= campground.description %> </p>
+                            <p class="card-text">
+                                <small class="text-muted"><%= campground.location %></small>
+                            </p>
+                            <a class="btn btn-primary w-100" href="/campgrounds/<%= campground._id %>">View</a>
+                        </div>
+                
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+    
+<script>
+    const mapBoxToken = '<%- process.env.MAPBOX_TOKEN %>';
+    const campgrounds = { features: <%- JSON.stringify(campgrounds) %> }; 
+</script>
+
+<script src="/javascripts/clusterMap.js"></script>

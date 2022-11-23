@@ -1,0 +1,28 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container d-flex justify-content-center align-items-center my-2">
+    <div class="row w-100">
+        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+            <div class="card shadow">
+                <img src="https://media.istockphoto.com/id/1278497183/photo/campsite-with-orange-tent-on-northern-minnesota-lake-at-sunrise-during-autumn.jpg?b=1&s=170667a&w=0&k=20&c=FEY9BVd0RSABKJqEpS82DvhZfKp5hhYMN1-hbBLtYXg=" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Login</h5>
+                    <form action="/login" method="post" novalidate class="form-validated">
+                        <div class="mb-3">
+                            <label class="form-label" for="username">Enter Username</label>
+                            <input class="form-control" type="text" id="username" name="username" autofocus required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password">Enter Password</label>
+                            <input class="form-control" type="password" id="password" name="password" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <button class="btn btn-danger w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

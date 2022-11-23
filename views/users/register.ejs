@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container d-flex justify-content-center align-items-center my-1">
+    <div class="row w-100">
+        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+            <div class="card shadow">
+                <img src="https://media.istockphoto.com/id/1359711196/photo/internally-lit-orange-tent-on-shore-of-lake-under-dramatic-sunset-sky.jpg?b=1&s=170667a&w=0&k=20&c=Wu60waJGCNLano1bzdmu8gn_WiLtXSfIXLZFx5rrz7s=" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Register</h5>
+                    <form action="/register" method="post" novalidate class="form-validated">
+                        <div class="mb-3">
+                            <label class="form-label" for="username">Enter Username</label>
+                            <input class="form-control" type="text" id="username" name="username" autofocus required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="email">Enter Email</label>
+                            <input class="form-control" type="email" id="email" name="email" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password">Enter Password</label>
+                            <input class="form-control" type="password" id="password" name="password" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <button class="btn btn-success w-100">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
