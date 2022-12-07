@@ -15,12 +15,13 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp'; 
 
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 const userRoutes = require('./routes/users');
-const MongoDBStore = require('connect-mongo');
+
+const MongoStore = require("connect-mongo");
 
 const mongoSanitize = require('express-mongo-sanitize');
 
@@ -52,7 +53,7 @@ app.use(mongoSanitize({
 
 const secret = process.env.SECRET || 'thismustbethebestsecret!!';
 
-const store = new MongoDBStore({
+const store = new MongoStore({
     mongoUrl: dbUrl,
     secret,
     touchAfter: 24 * 60 * 60
